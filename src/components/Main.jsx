@@ -20,7 +20,6 @@ const Main = () => {
       <Routes>
         <Route path="/" element={<RepositoryList />} />
         <Route path="/signin" element={<SignIn />} />
-
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </View>
