@@ -51,11 +51,11 @@ export const GET_REPOSITORY = gql`
   ${CORE_REVIEW_FIELDS}
   ${USER_FIELDS}
   ${CORE_REPOSITORY_FIELDS}
-  query Repository($id: ID!) {
+  query Repository($id: ID!, $first: Int!, $after: String) {
     repository(id: $id) {
       ...CoreRepositoryFields
       url
-      reviews {
+      reviews(first: $first, after: $after) {
         edges {
           node {
             ...CoreReviewFields
@@ -63,6 +63,11 @@ export const GET_REPOSITORY = gql`
               ...UserFields
             }
           }
+        }
+        pageInfo {
+          endCursor
+          startCursor
+          hasNextPage
         }
       }
     }
