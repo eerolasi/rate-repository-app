@@ -1,7 +1,6 @@
-import { View, Image, StyleSheet, Pressable, Button } from 'react-native'
+import { View, Image, StyleSheet, Pressable } from 'react-native'
 import Text from './Text'
 import theme from '../theme'
-import { useNavigate } from 'react-router-native'
 import * as Linking from 'expo-linking'
 
 const styles = StyleSheet.create({
